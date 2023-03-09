@@ -89,7 +89,7 @@ def main():
 
 main()
 """
-#Working on GUI
+#Not working all functions on GUI
 #Things To-Do(ironically on a todo list)
 #1. Add a scrollbar to the listbox
 #2. Add a delete button to delete items from the listbox
@@ -188,7 +188,7 @@ class Application(Frame):
         self.my_list.append(item)
         self.entry.delete(0, END)
 
-    def show_items(self):
+    def show_items(self): #Needs Fix
         list_window = Toplevel(self)
         list_window.title("Todo List")
 
