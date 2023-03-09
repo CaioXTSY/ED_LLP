@@ -37,14 +37,14 @@ class LinkedList:
         prev_node.next = current_node.next
         current_node = None
 
-    def search_node(self, key):
+    def print_node_index(self, index):
         current_node = self.head
+        count = 0
         while current_node is not None:
-            if current_node.data == key:
-                return current_node
-            
+            if count == index:
+                print(current_node.data)
             current_node = current_node.next
-        return None
+            count += 1
 
     def print_list(self):
         current_node = self.head
@@ -57,7 +57,4 @@ my_list.append(1)
 my_list.append(2)
 my_list.append(3)
 my_list.print_list()  # Out 1 2 3
-my_list.remove(2)
-my_list.print_list()  # Out 1 3
-my_list.prepend(0)
-my_list.print_list()  # Out 0 1 3
+my_list.print_node_index(1)  # Out 2
