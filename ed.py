@@ -7,7 +7,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    # Função para inserir um elemento no final da lista
     def append(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -18,13 +17,11 @@ class LinkedList:
             last_node = last_node.next
         last_node.next = new_node
 
-    # Função para inserir um elemento no início da lista
     def prepend(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
-    # Função para remover um elemento da lista
     def remove(self, key):
         current_node = self.head
         if current_node is not None and current_node.data == key:
@@ -40,7 +37,6 @@ class LinkedList:
         prev_node.next = current_node.next
         current_node = None
 
-    # Função para imprimir a lista
     def print_list(self):
         current_node = self.head
         while current_node is not None:
