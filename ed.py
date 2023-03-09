@@ -188,7 +188,7 @@ class Application(Frame):
         self.my_list.append(item)
         self.entry.delete(0, END)
 
-    def show_items(self): #Needs Fix
+    def show_items(self):
         list_window = Toplevel(self)
         list_window.title("Todo List")
 
@@ -198,8 +198,10 @@ class Application(Frame):
         listbox = Listbox(list_window, yscrollcommand=scrollbar.set)
         listbox.pack(side=LEFT, fill=BOTH)
 
-        for item in self.my_list:
-            listbox.insert(END, item)
+        current_node = self.my_list.head
+        while current_node is not None:
+            listbox.insert(END, current_node.data)
+            current_node = current_node.next
 
         scrollbar.config(command=listbox.yview)
 
